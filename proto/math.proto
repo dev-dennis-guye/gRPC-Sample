@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package greeter;
+
+service MathService {
+  // evaluates x + y
+  rpc add (Request) returns (Response);
+  rpc addv2 (Request1) returns (Response);
+}
+
+message Empty {}
+
+message Request {
+  int32 x =1;
+  int32 y =2;
+  int32 z =3;
+}
+
+message Request1{
+  repeated int32 xs=1;
+}
+
+message Response {
+  int64 result =1;
+}
+
+enum EnumExample {
+  FIRST=0;
+  SECOND=1;
+}
